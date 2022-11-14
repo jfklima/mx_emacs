@@ -28,4 +28,8 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
+(setq initial-scratch-message "")
+
+(setq-default major-mode 'text-mode)
+
 (provide 'basic)
