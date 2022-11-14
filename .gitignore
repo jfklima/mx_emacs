@@ -12,3 +12,8 @@
 
 # Others
 elpa/
+custom.el
+eln-cache/
+projectile-bookmarks.eld
+recentf
+transient/
