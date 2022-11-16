@@ -1,5 +1,5 @@
-(setq user-full-name "Sandeep Nambiar"
-      user-mail-address "contact@sandeepnambiar.com")
+(setq user-full-name "Jfranklin Lima"
+      user-mail-address "jfranklincontatos@gmail.com")
 
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
