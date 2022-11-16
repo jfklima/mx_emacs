@@ -31,5 +31,6 @@
 (setq initial-scratch-message "")
 
 (setq-default major-mode 'text-mode)
+(add-hook 'conf-mode-hook 'text-mode)
 
 (provide 'basic)

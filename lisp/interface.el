@@ -1,5 +1,7 @@
-(use-package swiper
-  :ensure t
+(use-package swiper :ensure t)
+
+(use-package ivy
+  :diminish ""
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)

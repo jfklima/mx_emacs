@@ -20,8 +20,6 @@
 
 (use-package avy
   :ensure t
-  :bind
-  ("C-=" . avy-goto-char)
   :config
   (setq avy-background t))
 

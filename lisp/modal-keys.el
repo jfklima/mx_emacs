@@ -2,6 +2,7 @@
  :keymaps 'edit
  "m" 'newline
  "o" 'open-line
+ "C-j" 'join-line
 
  "l" 'recenter-top-bottom
 
@@ -43,14 +44,22 @@
 
 (space-leader
   "SPC" '(:def execute-extended-command :wk "M-x")
+  "TAB" '(:def (lambda () (interactive) (switch-to-buffer (other-buffer)))
+	       :wk "last-buffer")
 
   "f" '(:def nil :wk "files")
   "f f" '(:def find-file :wk "find-file")
+  "f i" '(:def (lambda ()
+		 (interactive)
+		 (find-file (concat user-emacs-directory "init.el")))
+	       :wk "open-init")
 
   "b" '(:def nil :wk "buffer")
   "b b" '(:def switch-to-buffer :wk "buffer-list")
   "b s" 'save-buffer
   "b k" 'kill-this-buffer
+  "b a" 'beginning-of-buffer
+  "b e" 'end-of-buffer
 
   "w" '(:def nil :wk "windows")
   "w u" '(:def delete-other-windows :window-unique)
