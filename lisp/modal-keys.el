@@ -73,15 +73,12 @@
   "g" '(:def nil :wk "git")
   "g s" '(:def magit-status :wk "status")
 
-  "m" '(:def nil :wk "mode"))
+  "o" '(:def nil :wk "org")
+  "o o" '(:def (lambda () (interactive) (find-file "~/todo.org")) :wk "todo")
 
-(mode-leader :keymaps 'org-mode-map
-  "n" 'org-next-visible-heading
-  "p" 'org-previous-visible-heading
-  "f" 'org-forward-heading-same-level
-  "b" 'org-backward-heading-same-level
-  "u" 'outline-up-heading
-  "j" 'org-goto
-  "s" 'org-sparse-tree)
+  "q" '(:def nil :wk "quit")
+  "q q" '(:def save-buffers-kill-emacs :wk "quit-emacs")
+
+  "m" '(:def nil :wk "mode"))
 
 (provide 'modal-keys)
