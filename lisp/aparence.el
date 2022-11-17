@@ -13,7 +13,4 @@
   (setq sml/theme 'powerline)
   (add-hook 'after-init-hook 'sml/setup))
 
-(use-package diminish
-  :ensure t)
-
 (provide 'aparence)

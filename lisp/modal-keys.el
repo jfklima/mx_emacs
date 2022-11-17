@@ -44,8 +44,14 @@
 
 (space-leader
   "SPC" '(:def execute-extended-command :wk "M-x")
-  "TAB" '(:def (lambda () (interactive) (switch-to-buffer (other-buffer)))
+
+  "TAB" '(:def (lambda ()
+		 (interactive)
+		 (switch-to-buffer (other-buffer)))
 	       :wk "last-buffer")
+
+  "h" '(:def nil :wk "help")
+  "h" help-map
 
   "f" '(:def nil :wk "files")
   "f f" '(:def find-file :wk "find-file")
@@ -74,7 +80,10 @@
   "g s" '(:def magit-status :wk "status")
 
   "o" '(:def nil :wk "org")
-  "o o" '(:def (lambda () (interactive) (find-file "~/todo.org")) :wk "todo")
+  "o o" '(:def (lambda () (interactive) (find-file "~/todo.org")) :wk "org-todo")
+  "o s" 'org-store-link
+  "o a" 'org-agenda
+  "o c" 'org-capture
 
   "q" '(:def nil :wk "quit")
   "q q" '(:def save-buffers-kill-emacs :wk "quit-emacs")

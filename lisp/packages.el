@@ -8,4 +8,7 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(use-package diminish
+  :ensure t)
+
 (provide 'packages)

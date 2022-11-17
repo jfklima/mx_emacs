@@ -23,5 +23,4 @@
   :config
   (setq avy-background t))
 
-
 (provide 'edit)

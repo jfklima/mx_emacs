@@ -1,4 +1,5 @@
 (use-package multistate
+  :diminish ""
   :ensure t
   :hook
   ;; enable selection is Visual state
