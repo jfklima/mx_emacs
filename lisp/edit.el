@@ -23,4 +23,8 @@
   :config
   (setq avy-background t))
 
+(use-package caps-lock
+  :ensure t
+  :bind ("C-c u" . 'caps-lock-mode))
+
 (provide 'edit)

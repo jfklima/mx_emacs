@@ -10,6 +10,9 @@
   (multistate-replace-state-enter . overwrite-mode)
   (multistate-replace-state-exit .  (lambda () (overwrite-mode 0)))
 
+  (multistate-capslock-state-enter . caps-lock-mode)
+  (multistate-capslock-state-exit . (lambda () (caps-lock-mode 0)))
+
   :init
   (multistate-define-state 'emacs :lighter "Emacs")
 
@@ -42,6 +45,11 @@
    :cursor 'hollow
    :parent 'multistate-motion-state-map)
 
+  (multistate-define-state
+   'capslock
+   :lighter "CAPS"
+   :cursor '(hbar . 5))
+
   :config
   (add-hook 'text-mode-hook 'multistate-mode)
   (add-hook 'prog-mode-hook 'multistate-mode)
@@ -60,7 +68,12 @@
 
   (:map multistate-insert-state-map
 	("<return>" . edit-state)
+	("C-u" . multistate-capslock-state)
 	("SPC" . self-insert-command))
+
+  (:map multistate-capslock-state-map
+	("C-u" . multistate-insert-state)
+	("<return>" . multistate-edit-state))
 
   (:map multistate-mark-state-map
 	("<return>" . edit-state))
@@ -68,6 +81,7 @@
   (:map multistate-edit-state-map
 	("i" . multistate-insert-state)
 	("R" . multistate-replace-state)
+	("C-u" . multistate-capslock-state)
 	("<return>" . multistate-mark-state))
 
   (:map multistate-replace-state-map
