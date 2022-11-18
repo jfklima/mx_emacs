@@ -84,6 +84,11 @@
   "o s" 'org-store-link
   "o a" 'org-agenda
   "o c" 'org-capture
+  "l" '(:def nil :wk "bookmarks")
+  "l a" 'bookmark-set
+  "l l" 'bookmark-jump
+  "l m" 'list-bookmarks
+  "l s" 'bookmark-save
 
   "q" '(:def nil :wk "quit")
   "q q" '(:def save-buffers-kill-emacs :wk "quit-emacs")
