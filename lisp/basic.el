@@ -35,4 +35,10 @@
 (setq-default major-mode 'text-mode)
 (add-hook 'text-mode 'auto-fill-mode)
 
+;; start the initial frame maximized
+(add-to-list 'initial-frame-alist '(fullscreen . fullboth))
+
+;; start every frame maximized
+(add-to-list 'default-frame-alist '(fullscreen . fullboth))
+
 (provide 'basic)
