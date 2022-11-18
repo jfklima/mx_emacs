@@ -53,6 +53,17 @@
   "h" '(:def nil :wk "help")
   "h" help-map
 
+  "o" '(:def nil :wk "org")
+
+  "o o" '(:def (lambda ()
+		 (interactive)
+		 (find-file "~/orgs/organiza.org"))
+	       :wk "org-todo")
+
+  "o s" 'org-store-link
+  "o a" 'org-agenda
+  "o c" 'org-capture
+
   "f" '(:def nil :wk "files")
   "f f" '(:def find-file :wk "find-file")
   "f i" '(:def (lambda ()
