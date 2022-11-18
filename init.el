@@ -2,7 +2,7 @@
 
 (require 'basic)
 (require 'packages)
-;; (require 'aparence)
+(require 'aparence)
 (require 'edit)
 (require 'modal-mac)
 (require 'projects)
