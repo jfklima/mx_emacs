@@ -11,6 +11,8 @@
 (global-display-line-numbers-mode 1)
 (column-number-mode t)
 (size-indication-mode t)
+(setq ring-bell-function 'ignore)
+
 
 (setq inhibit-startup-screen t)
 
@@ -31,6 +33,6 @@
 (setq initial-scratch-message "")
 
 (setq-default major-mode 'text-mode)
-(add-hook 'conf-mode-hook 'text-mode)
+(add-hook 'text-mode 'auto-fill-mode)
 
 (provide 'basic)

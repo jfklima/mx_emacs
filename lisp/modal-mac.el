@@ -43,10 +43,9 @@
    :parent 'multistate-motion-state-map)
 
   :config
-  ;; (multistate-global-mode 1)
-
   (add-hook 'text-mode-hook 'multistate-mode)
   (add-hook 'prog-mode-hook 'multistate-mode)
+  (add-hook 'conf-mode-hook 'multistate-mode)
 
   (add-hook 'deactivate-mark-hook 'multistate-edit-state)
 
@@ -60,7 +59,8 @@
 	("M-m" . edit-state))
 
   (:map multistate-insert-state-map
-	("<return>" . edit-state))
+	("<return>" . edit-state)
+	("SPC" . self-insert-command))
 
   (:map multistate-mark-state-map
 	("<return>" . edit-state))
@@ -82,7 +82,7 @@
   (setf (alist-get 'motion general-keymap-aliases) 'multistate-motion-state-map)
 
   (general-create-definer space-leader :keymaps 'edit :prefix "SPC")
-  (general-create-definer mode-leader :keymaps 'edit :prefix "SPC m"))
+  (general-create-definer mode-leader :keymaps 'space-leader :prefix "SPC m"))
 
 (use-package which-key
   :ensure t

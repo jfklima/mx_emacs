@@ -19,6 +19,12 @@
  "]" 'scroll-other-window
  "[" 'scroll-other-window-down
 
+ ";" 'comment-line
+
+ "q" 'quit-window
+
+ "C" "C-c C-c"
+
  "g" 'keyboard-quit)
 
 (general-def
@@ -37,10 +43,13 @@
  "v" 'scroll-up-command
  "V" 'scroll-down-command)
 
+
+
 (general-def
  :keymaps 'mark
  "w" 'kill-region
- "W" 'kill-ring-save)
+ "W" 'kill-ring-save
+  ";" 'uncomment-region)
 
 (space-leader
   "SPC" '(:def execute-extended-command :wk "M-x")
@@ -85,16 +94,11 @@
   "p" '(:def projectile-command-map :wk "projectil")
 
   "s" '(:def nil :wk "search")
-  "s s" 'swiper
+  "s s" 'isearch-forward
 
   "g" '(:def nil :wk "git")
   "g s" '(:def magit-status :wk "status")
 
-  "o" '(:def nil :wk "org")
-  "o o" '(:def (lambda () (interactive) (find-file "~/todo.org")) :wk "org-todo")
-  "o s" 'org-store-link
-  "o a" 'org-agenda
-  "o c" 'org-capture
   "l" '(:def nil :wk "bookmarks")
   "l a" 'bookmark-set
   "l l" 'bookmark-jump
