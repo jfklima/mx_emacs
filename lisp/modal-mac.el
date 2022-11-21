@@ -68,12 +68,13 @@
 
   (:map multistate-insert-state-map
 	("<return>" . edit-state)
-	("C-u" . multistate-capslock-state)
+	("M-u" . multistate-capslock-state)
 	("SPC" . self-insert-command))
 
   (:map multistate-capslock-state-map
-	("C-u" . multistate-insert-state)
-	("<return>" . multistate-edit-state))
+	("M-u" . multistate-insert-state)
+	("<return>" . multistate-edit-state)
+	("SPC" . self-insert-command))
 
   (:map multistate-mark-state-map
 	("<return>" . edit-state))
@@ -81,7 +82,7 @@
   (:map multistate-edit-state-map
 	("i" . multistate-insert-state)
 	("R" . multistate-replace-state)
-	("C-u" . multistate-capslock-state)
+	("M-u" . multistate-capslock-state)
 	("<return>" . multistate-mark-state))
 
   (:map multistate-replace-state-map

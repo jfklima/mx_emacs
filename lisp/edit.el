@@ -14,9 +14,7 @@
     (show-paren-mode t)))
 
 (use-package crux
-  :ensure t
-  :bind
-  ("C-a" . crux-move-beginning-of-line))
+  :ensure t)
 
 (use-package avy
   :ensure t
@@ -26,5 +24,18 @@
 (use-package caps-lock
   :ensure t
   :bind ("C-c u" . 'caps-lock-mode))
+
+(use-package undo-fu :ensure t
+  :config
+  (global-set-key [remap undo] 'undo-fu-only-undo)
+  (global-set-key [remap undo-redo] 'undo-fu-only-redo))
+
+(use-package aggressive-indent
+  :ensure t
+  :hook
+  (emacs-lisp-mode . aggressive-indent-mode)
+  (python-mode . aggressive-indent-mode)
+  )
+
 
 (provide 'edit)

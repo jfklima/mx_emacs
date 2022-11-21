@@ -10,6 +10,7 @@
  "y" 'yank
 
  "/" 'undo
+ "C-/" 'undo-redo
 
  "d" 'delete-char
  "D" 'kill-word
@@ -35,15 +36,14 @@
  "n" 'next-line
  "p" 'previous-line
 
- "a" 'move-beginning-of-line
+ "a" 'crux-move-beginning-of-line
  "e" 'move-end-of-line
 
  "j" 'avy-goto-char
+ "," 'avy-goto-char-in-line
 
  "v" 'scroll-up-command
  "V" 'scroll-down-command)
-
-
 
 (general-def
  :keymaps 'mark
@@ -79,6 +79,12 @@
 		 (interactive)
 		 (find-file (concat user-emacs-directory "init.el")))
 	       :wk "open-init")
+
+  "o C" '(:def (lambda ()
+		 (interactive)
+		 (find-file (concat user-emacs-directory "/lisp/organize.el")))
+	       :wk "org-config")
+
 
   "b" '(:def nil :wk "buffer")
   "b b" '(:def switch-to-buffer :wk "buffer-list")
