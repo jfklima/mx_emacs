@@ -10,6 +10,7 @@
  "y" 'yank
 
  "/" 'undo
+ "C-/" 'undo-redo
 
  "d" 'delete-char
  "D" 'kill-word
@@ -28,22 +29,25 @@
  "g" 'keyboard-quit)
 
 (general-def
- :keymaps 'motion
- "b" 'backward-char
- "f" 'forward-char
+  :keymaps 'motion
+  "b" 'backward-char
+  "f" 'forward-char
 
- "n" 'next-line
- "p" 'previous-line
+  "n" 'next-line
+  "p" 'previous-line
 
- "a" 'move-beginning-of-line
- "e" 'move-end-of-line
+  "a" 'crux-move-beginning-of-line
+  "e" 'move-end-of-line
 
- "j" 'avy-goto-char
+  "j" 'avy-goto-char
+  "," 'avy-goto-char-in-line
 
- "v" 'scroll-up-command
- "V" 'scroll-down-command)
+  ;; register
+  "r r" 'point-to-register
+  "r j" 'jump-to-register
 
-
+  "v" 'scroll-up-command
+  "V" 'scroll-down-command)
 
 (general-def
  :keymaps 'mark
@@ -80,6 +84,12 @@
 		 (find-file (concat user-emacs-directory "init.el")))
 	       :wk "open-init")
 
+  "o C" '(:def (lambda ()
+		 (interactive)
+		 (find-file (concat user-emacs-directory "/lisp/organize.el")))
+	       :wk "org-config")
+
+
   "b" '(:def nil :wk "buffer")
   "b b" '(:def switch-to-buffer :wk "buffer-list")
   "b s" 'save-buffer
@@ -104,6 +114,7 @@
   "l l" 'bookmark-jump
   "l m" 'list-bookmarks
   "l s" 'bookmark-save
+
 
   "q" '(:def nil :wk "quit")
   "q q" '(:def save-buffers-kill-emacs :wk "quit-emacs")

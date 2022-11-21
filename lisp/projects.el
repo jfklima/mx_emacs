@@ -7,6 +7,7 @@
   :diminish projectile-mode
   :config
   (setq projectile-project-search-path '("~/workspace/projetos/"))
+  (global-set-key [remap projectile-find-dir] 'neotree-projectile-action)
   (projectile-mode +1))
 
 (use-package neotree :ensure t
@@ -23,7 +24,6 @@
 
   (space-leader
     "d d" 'neotree-toggle
-    "p d" 'neotree-projectile-action
     ))
 
 (provide 'projects)

@@ -35,7 +35,7 @@
   (add-hook 'helm-minibuffer-set-up-hook
 	    'spacemacs//helm-hide-minibuffer-maybe)
 
-  (setq helm-autoresize-max-height 40)
+  (setq helm-autoresize-max-height 60)
   (setq helm-autoresize-min-height 0)
   (helm-autoresize-mode 1)
 

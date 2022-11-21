@@ -7,22 +7,25 @@
 
 (setq org-directory "~/orgs/")
 
-(setq org-default-notes-file (concat org-directory "/organiza.org"))
+(setq org-default-notes-file (concat org-directory "notes.org"))
 
 (setq org-capture-templates
-      '(("a" "Todo" entry (file+headline "~/orgs/organiza.org" "Tasks")
-	 "* TODO %?\n")))
+      '(("d" "Distracões" entry (file+headline "~/orgs/anotacoes/distracoes.org" "Notas")
+	 "* %?\n%T")))
 
 (setq org-adapt-indentation t
       org-hide-leading-stars t
       org-odd-levels-only t)
 
+(setq org-startup-folded t)
 
 (setq org-todo-keywords
-      '((sequência "TODO" "DONE")))
+      '((sequence "TODO" "DONE")))
 
 (setq org-todo-keyword-faces
       '(("DONE" . "grey")))
+
+(setq org-agenda-skip-timestamp-if-done t)
 
 (mode-leader
   :keymaps 'org-mode-map
@@ -35,6 +38,8 @@
   "." 'org-time-stamp
   "d" 'org-deadline
   "s" 'org-schedule
+
+  "a" 'org-set-tags-command
 
   "p" 'org-set-property)
 
