@@ -70,7 +70,7 @@
 
   "o o" '(:def (lambda ()
 		 (interactive)
-		 (find-file "~/orgs/organiza.org"))
+		 (find-file "~/organiza/todo.org"))
 	       :wk "org-todo")
 
   "o s" 'org-store-link

@@ -5,12 +5,13 @@
 ;; de um ou mais documentos organizacionais.
 (require 'org)
 
-(setq org-directory "~/orgs/")
+(setq org-directory "~/organiza/")
 
 (setq org-default-notes-file (concat org-directory "notes.org"))
 
 (setq org-capture-templates
-      '(("d" "Distracões" entry (file+headline "~/orgs/anotacoes/distracoes.org" "Notas")
+      '(("d" "Distracões"
+	 entry (file+headline "~/organiza/anotacoes/distracoes.org" "Notas")
 	 "* %?\n%T")))
 
 (setq org-adapt-indentation t
