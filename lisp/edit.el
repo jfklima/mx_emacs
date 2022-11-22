@@ -13,9 +13,6 @@
     (smartparens-global-mode 1)
     (show-paren-mode t)))
 
-(use-package crux
-  :ensure t)
-
 (use-package avy
   :ensure t
   :config
@@ -34,8 +31,6 @@
   :ensure t
   :hook
   (emacs-lisp-mode . aggressive-indent-mode)
-  (python-mode . aggressive-indent-mode)
-  )
-
+  (ruby-mode . aggressive-indent-mode))
 
 (provide 'edit)
