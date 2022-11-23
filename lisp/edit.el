@@ -13,6 +13,12 @@
     (smartparens-global-mode 1)
     (show-paren-mode t)))
 
+(use-package crux
+  :ensure t
+  :config
+  (global-set-key [remap join-line] 'crux-top-join-line)
+  (global-set-key [remap delete-file] 'crux-delete-file-and-buffer))
+
 (use-package avy
   :ensure t
   :config
@@ -32,5 +38,6 @@
   :hook
   (emacs-lisp-mode . aggressive-indent-mode)
   (ruby-mode . aggressive-indent-mode))
+
 
 (provide 'edit)

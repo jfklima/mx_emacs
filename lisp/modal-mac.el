@@ -96,7 +96,7 @@
   (setf (alist-get 'replace general-keymap-aliases) 'multistate-replace-state-map)
   (setf (alist-get 'motion general-keymap-aliases) 'multistate-motion-state-map)
 
-  (general-create-definer space-leader :keymaps 'edit :prefix "SPC")
+  (general-create-definer space-leader :keymaps 'motion :prefix "SPC")
   (general-create-definer mode-leader :keymaps 'space-leader :prefix "SPC m"))
 
 (use-package which-key
