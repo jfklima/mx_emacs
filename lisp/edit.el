@@ -39,5 +39,12 @@
   (emacs-lisp-mode . aggressive-indent-mode)
   (ruby-mode . aggressive-indent-mode))
 
+(let ((package 'zzz-to-char))
+  (unless (package-installed-p package)
+    (package-install package)))
+
+(require 'zzz-to-char)
+(global-set-key [remap zap-to-char] 'zzz-to-char)
+(global-set-key [remap zap-up-to-char] 'zzz-up-to-char)
 
 (provide 'edit)

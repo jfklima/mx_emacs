@@ -26,6 +26,9 @@
 
   "Q" 'fill-paragraph
 
+  "z" 'zap-to-char
+  "Z" 'zap-up-to-char
+
   "C" "C-c C-c"
 
   "g" 'keyboard-quit)

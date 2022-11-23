@@ -41,6 +41,4 @@
 ;; start every frame maximized
 (add-to-list 'default-frame-alist '(fullscreen . fullboth))
 
-(desktop-save-mode 1)
-
 (provide 'basic)
