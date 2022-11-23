@@ -9,8 +9,13 @@
   "k" 'kill-line
   "y" 'yank
 
+<<<<<<< HEAD
   "/" 'undo
   "C-/" 'undo-redo
+=======
+ "/" 'undo
+ "C-/" 'undo-redo
+>>>>>>> c809f007421de79e4e7a56441ec5d999100ad46d
 
   "d" 'delete-char
   "D" 'kill-word
@@ -38,15 +43,24 @@
   "b" 'backward-char
   "f" 'forward-char
 
+<<<<<<< HEAD
   "n" 'next-line
   "p" 'previous-line
 
   "a" 'crux-move-beginning-of-line
   "e" 'move-end-of-line
+=======
+ "a" 'crux-move-beginning-of-line
+ "e" 'move-end-of-line
+
+ "j" 'avy-goto-char
+ "," 'avy-goto-char-in-line
+>>>>>>> c809f007421de79e4e7a56441ec5d999100ad46d
 
   "j" 'avy-goto-char
   "," 'avy-goto-char-in-line
 
+<<<<<<< HEAD
   ;; register
   "r r" 'point-to-register
   "r j" 'jump-to-register
@@ -54,6 +68,8 @@
   "v" 'scroll-up-command
   "V" 'scroll-down-command)
 
+=======
+>>>>>>> c809f007421de79e4e7a56441ec5d999100ad46d
 (general-def
   :keymaps 'mark
   "w" 'kill-region

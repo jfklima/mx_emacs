@@ -7,11 +7,18 @@
 
 (setq org-directory "~/orgs/")
 
+<<<<<<< HEAD
 (setq org-default-notes-file (concat org-directory "/organiza/notes.org"))
 
 (setq org-capture-templates
       '(("d" "Distracões"
 	 entry (file+headline "~/orgs/organiza/anotacoes/distracoes.org" "Notas")
+=======
+(setq org-default-notes-file (concat org-directory "notes.org"))
+
+(setq org-capture-templates
+      '(("d" "Distracões" entry (file+headline "~/orgs/anotacoes/distracoes.org" "Notas")
+>>>>>>> c809f007421de79e4e7a56441ec5d999100ad46d
 	 "* %?\n%T")))
 
 (setq org-adapt-indentation t
@@ -26,10 +33,13 @@
 (setq org-todo-keyword-faces
       '(("DONE" . "grey")))
 
+<<<<<<< HEAD
 (setq org-agenda-span 'day)
 (setq org-agenda-start-day "-0d")
 (setq org-agenda-start-on-weekday nil)
 
+=======
+>>>>>>> c809f007421de79e4e7a56441ec5d999100ad46d
 (setq org-agenda-skip-timestamp-if-done t)
 
 (mode-leader
