@@ -1,32 +1,34 @@
 (general-def
- :keymaps 'edit
- "m" 'newline
- "o" 'open-line
- "C-j" 'join-line
+  :keymaps 'edit
+  "m" 'newline
+  "o" 'open-line
+  "C-j" 'join-line
 
- "l" 'recenter-top-bottom
+  "l" 'recenter-top-bottom
 
- "k" 'kill-line
- "y" 'yank
+  "k" 'kill-line
+  "y" 'yank
 
- "/" 'undo
- "C-/" 'undo-redo
+  "/" 'undo
+  "C-/" 'undo-redo
 
- "d" 'delete-char
- "D" 'kill-word
- "x" 'backward-delete-char
- "X" 'backward-kill-word
+  "d" 'delete-char
+  "D" 'kill-word
+  "x" 'backward-delete-char
+  "X" 'backward-kill-word
 
- "]" 'scroll-other-window
- "[" 'scroll-other-window-down
+  "]" 'scroll-other-window
+  "[" 'scroll-other-window-down
 
- ";" 'comment-line
+  ";" 'comment-line
 
- "q" 'quit-window
+  "q" 'quit-window
 
- "C" "C-c C-c"
+  "Q" 'fill-paragraph
 
- "g" 'keyboard-quit)
+  "C" "C-c C-c"
+
+  "g" 'keyboard-quit)
 
 (general-def
   :keymaps 'motion
@@ -50,9 +52,9 @@
   "V" 'scroll-down-command)
 
 (general-def
- :keymaps 'mark
- "w" 'kill-region
- "W" 'kill-ring-save
+  :keymaps 'mark
+  "w" 'kill-region
+  "W" 'kill-ring-save
   ";" 'uncomment-region)
 
 (space-leader
@@ -70,12 +72,15 @@
 
   "o o" '(:def (lambda ()
 		 (interactive)
-		 (find-file "~/organiza/todo.org"))
+		 (find-file "~/orgs/organiza/todo.org"))
 	       :wk "org-todo")
 
   "o s" 'org-store-link
   "o a" 'org-agenda
   "o c" 'org-capture
+
+  "o d" '(lambda () (interactive)
+	   (org-agenda t "a"))
 
   "f" '(:def nil :wk "files")
   "f f" '(:def find-file :wk "find-file")
@@ -96,6 +101,7 @@
   "b k" 'kill-this-buffer
   "b a" 'beginning-of-buffer
   "b e" 'end-of-buffer
+  "b m" 'ibuffer
 
   "w" '(:def nil :wk "windows")
   "w u" '(:def delete-other-windows :window-unique)
