@@ -55,7 +55,8 @@
   :keymaps 'mark
   "w" 'kill-region
   "W" 'kill-ring-save
-  ";" 'uncomment-region)
+  ";" 'uncomment-region
+  "g" 'keyboard-quit)
 
 (space-leader
   "SPC" '(:def execute-extended-command :wk "M-x")

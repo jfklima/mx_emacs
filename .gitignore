@@ -19,3 +19,6 @@ recentf
 transient/
 eshell/
 bookmarks
+.emacs.desktop
+.emacs.desktop.lock
+.lsp-session-v1
