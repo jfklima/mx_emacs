@@ -14,4 +14,7 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+
 (org-agenda t "a")
+
+(desktop-save-mode 1)
