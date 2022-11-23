@@ -5,13 +5,13 @@
 ;; de um ou mais documentos organizacionais.
 (require 'org)
 
-(setq org-directory "~/organiza/")
+(setq org-directory "~/orgs/")
 
-(setq org-default-notes-file (concat org-directory "notes.org"))
+(setq org-default-notes-file (concat org-directory "/organiza/notes.org"))
 
 (setq org-capture-templates
       '(("d" "Distracões"
-	 entry (file+headline "~/organiza/anotacoes/distracoes.org" "Notas")
+	 entry (file+headline "~/orgs/organiza/anotacoes/distracoes.org" "Notas")
 	 "* %?\n%T")))
 
 (setq org-adapt-indentation t
@@ -25,6 +25,10 @@
 
 (setq org-todo-keyword-faces
       '(("DONE" . "grey")))
+
+(setq org-agenda-span 'day)
+(setq org-agenda-start-day "-0d")
+(setq org-agenda-start-on-weekday nil)
 
 (setq org-agenda-skip-timestamp-if-done t)
 
