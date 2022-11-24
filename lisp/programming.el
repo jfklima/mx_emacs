@@ -9,4 +9,10 @@
 
 (add-hook 'python-mode-hook 'python-doc)
 
+(defun ruby-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("Ruby")))
+
+(add-hook 'ruby-mode-hook 'ruby-doc)
+
 (provide 'programming)

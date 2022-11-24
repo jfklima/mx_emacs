@@ -7,10 +7,6 @@
 
 (setq org-directory "~/orgs/")
 
-(setq org-default-notes-file (concat org-directory "/organiza/notes.org"))
-
-(setq org-default-notes-file (concat org-directory "notes.org"))
-
 (setq org-capture-templates
       '(("d" "Distracões" entry (file+headline "~/orgs/anotacoes/distracoes.org" "Notas")
 	 "* %?\n%T")))
