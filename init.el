@@ -9,6 +9,7 @@
 (require 'interface)
 (require 'modal-keys)
 (require 'organize)
+(require 'programming)
 
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (when (file-exists-p custom-file)

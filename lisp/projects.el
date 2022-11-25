@@ -10,7 +10,8 @@
   (global-set-key [remap projectile-find-dir] 'neotree-projectile-action)
   (projectile-mode +1))
 
-(use-package neotree :ensure t
+(use-package neotree
+  :ensure t
   :config
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
   (setq projectile-switch-project-action 'neotree-projectile-action)

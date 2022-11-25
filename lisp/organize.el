@@ -9,15 +9,10 @@
 
 (setq org-default-notes-file (concat org-directory "/organiza/notes.org"))
 
-(setq org-capture-templates
-      '(("d" "Distracões"
-	 entry (file+headline "~/orgs/organiza/anotacoes/distracoes.org" "Notas")
-
 (setq org-default-notes-file (concat org-directory "notes.org"))
 
 (setq org-capture-templates
       '(("d" "Distracões" entry (file+headline "~/orgs/anotacoes/distracoes.org" "Notas")
-
 	 "* %?\n%T")))
 
 (setq org-adapt-indentation t
