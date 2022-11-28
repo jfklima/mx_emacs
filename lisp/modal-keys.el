@@ -79,7 +79,7 @@
 
   "o o" '(:def (lambda ()
 		 (interactive)
-		 (find-file "~/orgs/organiza/todo.org"))
+		 (find-file "~/orgs/tarefas.org"))
 	       :wk "org-todo")
 
   "o s" 'org-store-link

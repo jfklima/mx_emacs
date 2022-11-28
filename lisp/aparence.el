@@ -1,14 +1,12 @@
 (use-package all-the-icons
   :ensure t)
 
-;;;;;;;;;;;;;;;;;;;
-;;; COLOR-THEME ;;;
-;;;;;;;;;;;;;;;;;;;
 
 (use-package zenburn-theme
   :ensure t
   :config
   (load-theme 'zenburn t))
+
 
 (use-package doom-modeline
   :ensure t
