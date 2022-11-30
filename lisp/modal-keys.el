@@ -128,6 +128,10 @@
   "l m" 'list-bookmarks
   "l s" 'bookmark-save
 
+  "j" '(:def nil :wk "jump")
+  "j w" 'avy-goto-word-1
+  "j SPC" 'avy-goto-char-2
+
   "q" '(:def nil :wk "quit")
   "q q" '(:def save-buffers-kill-emacs :wk "quit-emacs")
 
