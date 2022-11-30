@@ -7,6 +7,7 @@
   "l" 'recenter-top-bottom
 
   "k" 'kill-line
+  "K" 'kill-whole-line
   "y" 'yank
 
   "/" 'undo
@@ -29,6 +30,10 @@
   "z" 'zap-to-char
   "Z" 'zap-up-to-char
 
+  "<" 'kmacro-start-macro
+  ">" 'kmacro-end-macro
+  "." 'kmacro-end-and-call-macro
+
   "C" "C-c C-c"
 
   "g" 'keyboard-quit)
@@ -43,9 +48,6 @@
 
   "a" 'crux-move-beginning-of-line
   "e" 'move-end-of-line
-
-  "j" 'avy-goto-char
-  "," 'avy-goto-char-in-line
 
   "j" 'avy-goto-char
   "," 'avy-goto-char-in-line
