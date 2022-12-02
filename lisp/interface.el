@@ -22,6 +22,8 @@
 	helm-ff-file-name-history-use-recentf t
 	helm-echo-input-in-header-line t)
 
+  (setq helm-M-x-reverse-history t)
+
   (defun spacemacs//helm-hide-minibuffer-maybe ()
     "Hide minibuffer in Helm session if we use the header line as input field."
     (when (with-helm-buffer helm-echo-input-in-header-line)
