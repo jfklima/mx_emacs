@@ -24,6 +24,7 @@
     (define-key map (kbd "P") 'neotree-copy-node))
 
   (space-leader
+    "d" '(:def nil :wk "directory")
     "d d" 'neotree-toggle
     ))
 
