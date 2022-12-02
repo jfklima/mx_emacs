@@ -19,7 +19,7 @@
   (multistate-define-state
    'insert
    :lighter "Insert"
-   :cursor 'bar
+   :cursor '(bar . 3)
    :parent 'multistate-emacs-state-map)
 
   (multistate-define-state
