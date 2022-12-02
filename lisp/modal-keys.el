@@ -36,12 +36,22 @@
 
   "C" "C-c C-c"
 
+  ;; substitui char
+  "s" '(lambda ()
+	 (interactive)
+	 (progn
+	   (delete-char 1)
+	   (insert-state)))
+
   "g" 'keyboard-quit)
 
 (general-def
   :keymaps 'motion
   "b" 'backward-char
   "f" 'forward-char
+
+  "B" 'backward-word
+  "F" 'forward-word
 
   "n" 'next-line
   "p" 'previous-line
