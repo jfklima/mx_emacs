@@ -2,6 +2,7 @@
   :ensure t
   :diminish company-mode
   :config
+  (setq completion-ignore-case t)
   (add-hook 'prog-mode-hook #'company-mode))
 
 (use-package smartparens
