@@ -43,6 +43,37 @@
 	   (delete-char 1)
 	   (insert-state)))
 
+  "I" '(lambda ()
+	 (interactive)
+	 (progn
+	   (crux-move-beginning-of-line 1)
+	   (insert-state)))
+
+  "A" '(lambda ()
+	 (interactive)
+	 (progn
+	   (end-of-line)
+	   (insert-state)))
+
+  "c c" '(lambda ()
+	   (interactive)
+	   (progn
+	     (crux-move-beginning-of-line 1)
+	     (kill-line)
+	     (insert-state)))
+
+  "c w" '(lambda ()
+	   (interactive)
+	   (progn
+	     (kill-word 1)
+	     (insert-state)))
+
+  "S" '(lambda ()
+	 (interactive)
+	 (progn
+	   (kill-line)
+	   (insert-state)))
+
   "g" 'keyboard-quit)
 
 (general-def
