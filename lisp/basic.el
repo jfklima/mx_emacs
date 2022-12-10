@@ -9,8 +9,6 @@
 (global-hl-line-mode +1)
 (line-number-mode +1)
 (global-display-line-numbers-mode 1)
-(column-number-mode t)
-(size-indication-mode t)
 (setq ring-bell-function 'ignore)
 
 

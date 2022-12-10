@@ -58,6 +58,4 @@
 
   "p" 'org-set-property)
 
-(todo)
-
 (provide 'organize)

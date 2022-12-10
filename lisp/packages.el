@@ -11,4 +11,6 @@
 (use-package diminish
   :ensure t)
 
+(use-package try :ensure t)
+
 (provide 'packages)
