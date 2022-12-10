@@ -131,6 +131,19 @@
   "s" '(:def nil :wk "search")
   "s s" 'isearch-forward
 
+  "p" '(:def nil :wk "projects")
+  "p p" 'project-switch-project
+  "p f" 'project-find-file
+  "p d" 'project-find-dir
+  "p g" 'project-find-regexp
+  "p r" 'project-query-replace-regexp
+  "p D" 'project-dired
+  "p s" 'project-shell
+  "p c" 'project-compile
+  "p !" 'project-shell-command
+  "p b" 'project-switch-to-buffer
+  "p k" 'project-kill-buffers
+
   "g" '(:def nil :wk "git")
   "g s" '(:def magit-status :wk "status")
 
