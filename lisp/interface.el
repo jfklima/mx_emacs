@@ -41,6 +41,7 @@
   (setq helm-autoresize-min-height 0)
   (helm-autoresize-mode 1)
 
+
   (global-set-key [remap execute-extended-command] 'helm-M-x)
   (global-set-key [remap find-file] 'helm-find-files)
   (global-set-key [remap switch-to-buffer] 'helm-buffers-list)

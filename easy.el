@@ -32,6 +32,8 @@
 (setq-default major-mode 'text-mode)
 (add-hook 'text-mode-hook 'auto-fill-mode)
 
+(load-theme 'deeper-blue)
+
 ;; start the initial frame maximized
 (add-to-list 'initial-frame-alist '(fullscreen . fullboth))
 

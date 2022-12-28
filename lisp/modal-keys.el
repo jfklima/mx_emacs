@@ -74,6 +74,13 @@
 	   (kill-line)
 	   (insert-state)))
 
+  "O" '(lambda ()
+	 (interactive)
+	 (crux-smart-open-line-above)
+	 (insert-state))
+
+  "ç" "C-x C-x"
+
   "g" 'keyboard-quit)
 
 (general-def
@@ -126,7 +133,7 @@
 	       :wk "org-todo")
 
   "o s" 'org-store-link
-  "o a" 'org-agenda
+  "o a" '(lambda () (interactive) (org-agenda t "a"))
   "o c" 'org-capture
 
   "o d" '(lambda () (interactive)
@@ -163,17 +170,14 @@
   "s s" 'isearch-forward
 
   "p" '(:def nil :wk "projects")
-  "p p" 'project-switch-project
-  "p f" 'project-find-file
-  "p d" 'project-find-dir
-  "p g" 'project-find-regexp
-  "p r" 'project-query-replace-regexp
+  "p p" 'projectile-switch-project
+  "p f" 'projectile--find-file
+  "p d" 'projectile-find-dir
   "p D" 'project-dired
+  "p D" 'projectile-dired
   "p s" 'project-shell
-  "p c" 'project-compile
-  "p !" 'project-shell-command
-  "p b" 'project-switch-to-buffer
-  "p k" 'project-kill-buffers
+  "p b" 'projectile-switch-to-buffer
+  "p K" 'projectile-kill-buffers
 
   "g" '(:def nil :wk "git")
   "g s" '(:def magit-status :wk "status")

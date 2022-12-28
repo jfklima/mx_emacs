@@ -3,7 +3,6 @@
   :bind (("C-c g" . magit-status)))
 
 (use-package projectile
-  :diminish t
   :ensure t
   :diminish projectile-mode
   :config
@@ -15,7 +14,7 @@
   :ensure t
   :config
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  ;; (setq projectile-switch-project-action 'neotree-projectile-action)
+  (setq projectile-switch-project-action 'neotree-projectile-action)
 
   (let ((map neotree-mode-map))
     (define-key map (kbd "RET") (kbd "SPC"))

@@ -55,6 +55,8 @@
   (add-hook 'prog-mode-hook 'multistate-mode)
   (add-hook 'conf-mode-hook 'multistate-mode)
 
+  (global-set-key (kbd "M-m") 'multistate-mode)
+
   (add-hook 'deactivate-mark-hook 'multistate-edit-state)
 
   (defun edit-state () (interactive) (multistate-edit-state))

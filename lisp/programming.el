@@ -54,7 +54,7 @@
 
 (use-package company-box
   :ensure t
-  :hook (company-mode . company-box-mode))
+  :hook (python-mode . company-box-mode))
 
 
 (provide 'programming)

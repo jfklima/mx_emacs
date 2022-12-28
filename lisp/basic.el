@@ -11,13 +11,7 @@
 (global-display-line-numbers-mode 1)
 (setq ring-bell-function 'ignore)
 
-
 (setq inhibit-startup-screen t)
-
-(setq frame-title-format
-      '((:eval (if (buffer-file-name)
-       (abbreviate-file-name (buffer-file-name))
-       "%b"))))
 
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
@@ -26,17 +20,26 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Cleanup some blank problems in all buffer or at region.
+;; before a buffer is saved to its file.
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
+;; clear message initial of scratch
 (setq initial-scratch-message "")
 
+;; change major-mode fundamental for text-mode
 (setq-default major-mode 'text-mode)
+
+;; active auto-fill in text-mode
 (add-hook 'text-mode-hook 'auto-fill-mode)
+
+;; (load-theme 'deeper-blue)
 
 ;; start the initial frame maximized
 (add-to-list 'initial-frame-alist '(fullscreen . fullboth))
 
 ;; start every frame maximized
 (add-to-list 'default-frame-alist '(fullscreen . fullboth))
+
 
 (provide 'basic)
