@@ -71,7 +71,7 @@
   (:map multistate-insert-state-map
 	("<return>" . edit-state)
 	("M-u" . multistate-capslock-state)
-	("TAB" . company-complete)
+	("M-i" . company-complete)
 	("SPC" . self-insert-command))
 
   (:map multistate-capslock-state-map

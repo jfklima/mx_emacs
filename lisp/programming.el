@@ -7,12 +7,26 @@
   (interactive)
   (setq-local dash-docs-docsets '("Python 3")))
 
+
+(defun ruby-doc ()
+  (interactive)
+  (setq-local dash-docs-docsets '("Ruby")))
+
+(mode-leader :keymaps 'ruby-mode-map
+  "d" 'helm-dash)
+
+(mode-leader :keymaps 'python-mode-map
+  "i" 'imenu
+  "d" 'helm-dash)
+
 (add-hook 'python-mode-hook 'python-doc)
+(add-hook 'ruby-mode-hook 'ruby-doc)
 
 
-(use-package flycheck
-  :ensure t
-  :init (global-flycheck-mode))
+;; (use-package flycheck
+;; :disabled t
+;; :ensure t
+;; :init (global-flycheck-mode))
 
 
 (use-package lsp-mode
@@ -29,7 +43,6 @@
   ;; if you want which-key integration
   (lsp-mode . lsp-enable-which-key-integration)
   :commands lsp)
-
 
 (use-package lsp-ui
   :ensure t
@@ -54,7 +67,14 @@
 
 (use-package company-box
   :ensure t
-  :hook (python-mode . company-box-mode))
+  :hook
+  (lsp . company-box-mode))
+  ;; (python-mode . company-box-mode)
+  ;; (gdscript-mode . company-box-mode))
 
+(use-package gdscript-mode
+  :ensure t
+  :hook
+  (gdscrip-mode . lsp))
 
 (provide 'programming)

@@ -163,6 +163,8 @@
   "w" '(:def nil :wk "windows")
   "w u" '(:def delete-other-windows :window-unique)
   "w o" 'other-window
+  "w h" 'split-window-horizontally
+  "w v" 'split-window-vertically
 
   "p" '(:def projectile-command-map :wk "projectil")
 
