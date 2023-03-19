@@ -1,4 +1,8 @@
+(require 'ido)
+(ido-mode t)
+
 (use-package helm
+  :disabled t
   :ensure t
   :diminish ""
   :config
