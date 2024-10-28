@@ -162,16 +162,6 @@
   "s" '(:def nil :wk "search")
   "s s" 'isearch-forward
 
-  "p" '(:def nil :wk "projects")
-  "p p" 'projectile-switch-project
-  "p f" 'projectile--find-file
-  "p d" 'projectile-find-dir
-  "p D" 'project-dired
-  "p D" 'projectile-dired
-  "p s" 'project-shell
-  "p b" 'projectile-switch-to-buffer
-  "p K" 'projectile-kill-buffers
-
   "l" '(:def nil :wk "bookmarks")
   "l a" 'bookmark-set
   "l l" 'bookmark-jump

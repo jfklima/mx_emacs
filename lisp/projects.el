@@ -2,6 +2,7 @@
   :ensure t
   :bind (("C-c g" . magit-status)))
 
+
 (use-package projectile
   :ensure t
   :diminish projectile-mode
@@ -9,6 +10,7 @@
   (setq projectile-project-search-path '("~/Projetos"))
   (global-set-key [remap projectile-find-dir] 'neotree-projectile-action)
   (projectile-mode +1))
+
 
 (use-package neotree
   :ensure t
@@ -27,22 +29,30 @@
 	neo-window-width 40)
   (setq projectile-switch-project-action 'projectile-find-file)
 
-  ;; abrir no arquivo atual
-  ;; fechar quando abrir um arquivo com return
-
   (let ((map neotree-mode-map))
     (define-key map (kbd "RET") 'custom-neotree-enter-hide)
     (define-key map (kbd "C") 'neotree-create-node)
     (define-key map (kbd "D") 'neotree-delete-node)
     (define-key map (kbd "R") 'neotree-rename-node)
-    (define-key map (kbd "P") 'neotree-copy-node))
+    (define-key map (kbd "P") 'neotree-copy-node)))
 
-  (space-leader
-    "d" '(:def nil :wk "directory")
-    "d d" 'neotree-toggle
-    ))
 
 (space-leader
+  ;; projectile
+  "p" '(:def nil :wk "projects")
+  "p p" 'projectile-switch-project
+  "p f" 'projectile--find-file
+  "p d" 'projectile-find-dir
+  "p D" 'project-dired
+  "p D" 'projectile-dired
+  "p s" 'project-shell
+  "p b" 'projectile-switch-to-buffer
+  "p K" 'projectile-kill-buffers
+
+  ;; neotree
+  "d" '(:def nil :wk "directory")
+  "d d" 'neotree-toggle
+
   ;; magit
   "g" '(:def nil :wk "git")
   "g s" 'magit-status
