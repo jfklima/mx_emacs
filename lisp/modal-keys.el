@@ -1,5 +1,4 @@
-(general-def
-  :keymaps 'edit
+(edit-map
   "m" 'newline
   "o" 'open-line
   "C-j" 'join-line
