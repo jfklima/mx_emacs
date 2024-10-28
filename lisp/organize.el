@@ -39,6 +39,23 @@
 ;; não mostra na agenda tarefas concluídas
 (setq org-agenda-skip-timestamp-if-done t)
 
+
+(space-leader
+  "o" '(:def nil :wk "org")
+
+  "o o" '(:def (lambda ()
+		 (interactive)
+		 (find-file "~/orgs/tarefas.org"))
+	       :wk "org-todo")
+
+  "o s" 'org-store-link
+  "o a" '(lambda () (interactive) (org-agenda t "a"))
+  "o c" 'org-capture
+
+  "o d" '(lambda () (interactive)
+	   (org-agenda t "a")))
+
+
 ;; mapa de teclado para o org-mode
 (mode-leader
   :keymaps 'org-mode-map

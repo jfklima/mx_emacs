@@ -129,20 +129,6 @@
   "h" '(:def nil :wk "help")
   "h" help-map
 
-  "o" '(:def nil :wk "org")
-
-  "o o" '(:def (lambda ()
-		 (interactive)
-		 (find-file "~/orgs/tarefas.org"))
-	       :wk "org-todo")
-
-  "o s" 'org-store-link
-  "o a" '(lambda () (interactive) (org-agenda t "a"))
-  "o c" 'org-capture
-
-  "o d" '(lambda () (interactive)
-	   (org-agenda t "a"))
-
   "f" '(:def nil :wk "files")
   "f f" '(:def find-file :wk "find-file")
   "f i" '(:def (lambda ()
