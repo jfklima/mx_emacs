@@ -109,12 +109,14 @@
   "g" 'keyboard-quit)
 
 
-(general-def
-  :keymaps 'visual
+(visual-map
+;; (general-def
+  ;; :keymaps 'visual
   "w" 'kill-region
   "W" 'kill-ring-save
   ";" 'uncomment-region
   "g" 'keyboard-quit)
+
 
 (space-leader
   "SPC" '(:def execute-extended-command :wk "M-x")
@@ -201,5 +203,6 @@
   "q q" '(:def save-buffers-kill-emacs :wk "quit-emacs")
 
   "m" '(:def nil :wk "mode"))
+
 
 (provide 'modal-keys)

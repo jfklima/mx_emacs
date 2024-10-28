@@ -108,6 +108,7 @@
 
   (general-create-definer edit-map :keymaps 'edit)
   (general-create-definer motion-map :keymaps 'motion)
+  (general-create-definer visual-map :keymaps 'visual)
 
   (general-create-definer space-leader :keymaps 'motion :prefix "SPC")
   (general-create-definer mode-leader :keymaps 'space-leader :prefix "SPC m"))
