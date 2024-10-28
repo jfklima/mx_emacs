@@ -42,4 +42,11 @@
     "d d" 'neotree-toggle
     ))
 
+(space-leader
+  ;; magit
+  "g" '(:def nil :wk "git")
+  "g s" 'magit-status
+  "g d" 'magit-file-dispatch
+  "g D" 'magit-dispatch)
+
 (provide 'projects)

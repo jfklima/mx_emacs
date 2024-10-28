@@ -172,9 +172,6 @@
   "p b" 'projectile-switch-to-buffer
   "p K" 'projectile-kill-buffers
 
-  "g" '(:def nil :wk "git")
-  "g s" '(:def magit-status :wk "status")
-
   "l" '(:def nil :wk "bookmarks")
   "l a" 'bookmark-set
   "l l" 'bookmark-jump
