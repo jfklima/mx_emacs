@@ -1,13 +1,7 @@
-(require 'ido)
-(ido-mode t)
-
 (use-package helm
-  :disabled t
   :ensure t
   :diminish ""
   :config
-  (require 'helm-config)
-
   (global-set-key (kbd "C-c h") 'helm-command-prefix)
   (global-unset-key (kbd "C-x c"))
 
@@ -44,7 +38,6 @@
   (setq helm-autoresize-max-height 60)
   (setq helm-autoresize-min-height 0)
   (helm-autoresize-mode 1)
-
 
   (global-set-key [remap execute-extended-command] 'helm-M-x)
   (global-set-key [remap find-file] 'helm-find-files)
