@@ -12,6 +12,8 @@
 
   "/" 'undo
   "C-/" 'undo-redo
+  "u" 'undo
+  "U" 'undo-redo
 
   "d" 'delete-char
   "D" 'kill-word
