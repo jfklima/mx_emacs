@@ -35,6 +35,7 @@
   (global-set-key [remap undo-redo] 'undo-fu-only-redo))
 
 (use-package aggressive-indent
+  :disabled t
   :ensure t
   :hook
   (emacs-lisp-mode . aggressive-indent-mode)
