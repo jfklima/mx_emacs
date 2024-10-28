@@ -3,8 +3,8 @@
   :ensure t
   :hook
   ;; enable selection is Visual state
-  (multistate-mark-state-enter . (lambda () (set-mark (point))))
-  (multistate-mark-state-exit .  deactivate-mark)
+  (multistate-visual-state-enter . (lambda () (set-mark (point))))
+  (multistate-visual-state-exit .  deactivate-mark)
 
   ;; enable overwrite-mode in Replace state
   (multistate-replace-state-enter . overwrite-mode)
@@ -40,8 +40,8 @@
    :cursor 'hbar)
 
   (multistate-define-state
-   'mark
-   :lighter "Mark"
+   'visual
+   :lighter "Visual"
    :cursor 'hollow
    :parent 'multistate-motion-state-map)
 
@@ -61,7 +61,7 @@
 
   (defun edit-state () (interactive) (multistate-edit-state))
   (defun insert-state () (interactive) (multistate-insert-state))
-  (defun mark-state () (interactive) (multistate-mark-state))
+  (defun visual-state () (interactive) (multistate-visual-state))
   (defun replace-state () (interactive) (multistate-replace-state))
 
   :bind
@@ -72,6 +72,7 @@
 	("<return>" . edit-state)
 	("M-u" . multistate-capslock-state)
 	("M-i" . company-complete)
+	("TAB" . company-complete)
 	("SPC" . self-insert-command))
 
   (:map multistate-capslock-state-map
@@ -79,14 +80,14 @@
 	("<return>" . multistate-edit-state)
 	("SPC" . self-insert-command))
 
-  (:map multistate-mark-state-map
+  (:map multistate-visual-state-map
 	("<return>" . edit-state))
 
   (:map multistate-edit-state-map
 	("i" . multistate-insert-state)
 	("R" . multistate-replace-state)
 	("M-u" . multistate-capslock-state)
-	("<return>" . multistate-mark-state))
+	("<return>" . multistate-visual-state))
 
   (:map multistate-replace-state-map
 	("<return>" . multistate-edit-state)))
@@ -95,12 +96,15 @@
   :config
   (setf (alist-get 'insert general-keymap-aliases) 'multistate-insert-state-map)
   (setf (alist-get 'edit general-keymap-aliases) 'multistate-edit-state-map)
-  (setf (alist-get 'mark general-keymap-aliases) 'multistate-mark-state-map)
+  (setf (alist-get 'visual general-keymap-aliases) 'multistate-visual-state-map)
   (setf (alist-get 'replace general-keymap-aliases) 'multistate-replace-state-map)
   (setf (alist-get 'motion general-keymap-aliases) 'multistate-motion-state-map)
 
+  (general-create-definer edit-map :keymaps 'edit)
+
   (general-create-definer space-leader :keymaps 'motion :prefix "SPC")
   (general-create-definer mode-leader :keymaps 'space-leader :prefix "SPC m"))
+
 
 (use-package which-key
   :ensure t

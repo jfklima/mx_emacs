@@ -10,8 +10,6 @@
   "K" 'kill-whole-line
   "y" 'yank
 
-  "/" 'undo
-  "C-/" 'undo-redo
   "u" 'undo
   "U" 'undo-redo
 
@@ -110,7 +108,7 @@
   "V" 'scroll-down-command)
 
 (general-def
-  :keymaps 'mark
+  :keymaps 'visual
   "w" 'kill-region
   "W" 'kill-ring-save
   ";" 'uncomment-region
