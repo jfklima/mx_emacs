@@ -5,9 +5,9 @@
 ;; de um ou mais documentos organizacionais.
 (require 'org)
 
-(setq org-directory "~/orgs/")
+(setq org-directory "~/org/")
 
-(setq todo-file (concat org-directory "tarefas.org"))
+(setq todo-file (concat org-directory "todo.org"))
 
 ;; (setq org-default-notes-file (concat org-directory "tarefas.org"))
 (setq org-default-notes-file todo-file)
@@ -42,20 +42,20 @@
 ;; mapa de teclado para o org-mode
 (mode-leader
   :keymaps 'org-mode-map
-  "t" 'org-todo
-  "i" 'org-insert-todo-heading
+  "t" '(:def org-todo :wk "todo")
+  "i" '(:def org-insert-todo-heading :wk "insert-todo-heading")
 
-  "l" 'org-insert-link
-  "o" 'org-open-at-point
+  "l" '(:def org-insert-link :wk "insert-link")
+  "o" '(:def org-open-at-point :wk "open-at-point")
 
-  "." 'org-time-stamp
-  "d" 'org-deadline
-  "s" 'org-schedule
+  "." '(:def org-time-stamp :wk "time-stamp")
+  "d" '(:def org-deadline :wk "deadline")
+  "s" '(:def org-schedule :wk "schedule")
 
-  "a" 'org-set-tags-command
+  "a" '(:def org-set-tags-command :wk "set-tags-command")
 
-  "o" 'org-sort-entries
+  "o" '(:def org-sort-entries :wk "sort-entries")
 
-  "p" 'org-set-property)
+  "p" '(:def org-set-property :wk "set-property"))
 
 (provide 'organize)
