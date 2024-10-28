@@ -6,18 +6,32 @@
   :ensure t
   :diminish projectile-mode
   :config
-  (setq projectile-project-search-path '("~/workspace/projetos/"))
+  (setq projectile-project-search-path '("~/Projetos"))
   (global-set-key [remap projectile-find-dir] 'neotree-projectile-action)
   (projectile-mode +1))
 
 (use-package neotree
   :ensure t
+  :preface
+  (defun custom-neotree-enter-hide ()
+    (interactive)
+    (neotree-enter)
+    (let ((current (neo-buffer--get-filename-current-line)))
+      (if (not (and current (file-accessible-directory-p current)))
+	  (neotree-hide))))
+
   :config
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  (setq projectile-switch-project-action 'neotree-projectile-action)
+  ;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (setq neo-theme 'icons
+	neo-smart-open t
+	neo-window-width 40)
+  (setq projectile-switch-project-action 'projectile-find-file)
+
+  ;; abrir no arquivo atual
+  ;; fechar quando abrir um arquivo com return
 
   (let ((map neotree-mode-map))
-    (define-key map (kbd "RET") (kbd "SPC"))
+    (define-key map (kbd "RET") 'custom-neotree-enter-hide)
     (define-key map (kbd "C") 'neotree-create-node)
     (define-key map (kbd "D") 'neotree-delete-node)
     (define-key map (kbd "R") 'neotree-rename-node)
