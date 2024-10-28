@@ -107,6 +107,7 @@
   (setf (alist-get 'motion general-keymap-aliases) 'multistate-motion-state-map)
 
   (general-create-definer edit-map :keymaps 'edit)
+  (general-create-definer motion-map :keymaps 'motion)
 
   (general-create-definer space-leader :keymaps 'motion :prefix "SPC")
   (general-create-definer mode-leader :keymaps 'space-leader :prefix "SPC m"))

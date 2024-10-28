@@ -1,3 +1,29 @@
+(motion-map
+;; (general-def
+  ;; :keymaps 'motion
+  "b" 'backward-char
+  "f" 'forward-char
+
+  "B" 'backward-word
+  "F" 'forward-word
+
+  "n" 'next-line
+  "p" 'previous-line
+
+  "a" 'crux-move-beginning-of-line
+  "e" 'move-end-of-line
+
+  "j" 'avy-goto-char
+  "," 'avy-goto-char-in-line
+
+  ;; register
+  "r r" 'point-to-register
+  "r j" 'jump-to-register
+
+  "v" 'scroll-up-command
+  "V" 'scroll-down-command)
+
+
 (edit-map
   "m" 'newline
   "o" 'open-line
@@ -82,29 +108,6 @@
 
   "g" 'keyboard-quit)
 
-(general-def
-  :keymaps 'motion
-  "b" 'backward-char
-  "f" 'forward-char
-
-  "B" 'backward-word
-  "F" 'forward-word
-
-  "n" 'next-line
-  "p" 'previous-line
-
-  "a" 'crux-move-beginning-of-line
-  "e" 'move-end-of-line
-
-  "j" 'avy-goto-char
-  "," 'avy-goto-char-in-line
-
-  ;; register
-  "r r" 'point-to-register
-  "r j" 'jump-to-register
-
-  "v" 'scroll-up-command
-  "V" 'scroll-down-command)
 
 (general-def
   :keymaps 'visual
