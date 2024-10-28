@@ -29,10 +29,16 @@
 
   (multistate-define-state
    'edit
-   :default t
+   ;; :default t
    :lighter "Edit"
    :cursor 'box
    :parent 'multistate-motion-state-map)
+
+  (multistate-define-state
+   'normal
+   :default t
+   :lighter "Normal"
+   :parent 'multistate-edit-state-map)
 
   (multistate-define-state
    'replace
