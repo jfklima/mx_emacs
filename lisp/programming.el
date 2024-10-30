@@ -7,15 +7,17 @@
 
 (add-hook 'python-mode-hook #'eglot-ensure)
 
-(unless (package-installed-p 'helm-dash)
-  (package-install 'helm-dash))
+(use-package counsel-dash :ensure t
+  :config
+  (global-set-key (kbd "C-c i") 'counsel-dash-install-docset)
 
-(require 'helm-dash)
+  (mode-leader :keymaps 'prog-mode-map
+  "d" 'counsel-dash))
 
-;; (add-hook 'python-mode-hook (setq-local dash-docs-docsets '("Python 3")))
 
-(mode-leader :keymaps 'prog-mode-map
-  "d" 'helm-dash)
+(add-hook 'python-mode-hook (lambda () (setq-local counsel-dash-docsets '("Python 3"))))
+(add-hook 'emacs-lisp-mode-hook (lambda () (setq-local counsel-dash-docsets '("Emacs Lisp"))))
+(add-hook 'ruby-mode-hook (lambda () (setq-local counsel-dash-docsets '("Ruby"))))
 
 (use-package company-box :ensure t
   :hook (company-mode . company-box-mode))
