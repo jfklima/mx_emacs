@@ -2,7 +2,7 @@
   :config
   (setq ivy-use-virtual-buffers t
 	ivy-count-format "(%d/%d) "
-	ivy-height 17
+	ivy-height 16
 	ivy-wrap t)
 
   (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
