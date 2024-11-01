@@ -1,35 +1,36 @@
 (motion-map
-;; (general-def
-  ;; :keymaps 'motion
   "b" 'backward-char
   "f" 'forward-char
 
   "B" 'backward-word
   "F" 'forward-word
 
-  "n" 'next-line
-  "p" 'previous-line
-
-  "a" 'crux-move-beginning-of-line
+  "a" 'beginning-of-line
   "e" 'move-end-of-line
 
-  "j" 'avy-goto-char
-  "," 'avy-goto-char-in-line
+  "p" 'previous-line
+  "n" 'next-line
+
+  "l" 'recenter-top-bottom
+
+  "A" 'backward-sentence
+  "E" 'forward-sentence
+
+  "P" 'backward-paragraph
+  "N" 'forward-paragraph
+
+  "v" 'scroll-up-command
+  "V" 'scroll-down-command
 
   ;; register
   "r r" 'point-to-register
-  "r j" 'jump-to-register
-
-  "v" 'scroll-up-command
-  "V" 'scroll-down-command)
+  "r j" 'jump-to-register)
 
 
 (edit-map
   "m" 'newline
   "o" 'open-line
   "C-j" 'join-line
-
-  "l" 'recenter-top-bottom
 
   "k" 'kill-line
   "K" 'kill-whole-line
@@ -61,60 +62,15 @@
 
   "C" "C-c C-c"
 
-  ;; substitui char
-  "s" '(lambda ()
-	 (interactive)
-	 (progn
-	   (delete-char 1)
-	   (insert-state)))
-
-  "I" '(lambda ()
-	 (interactive)
-	 (progn
-	   (crux-move-beginning-of-line 1)
-	   (insert-state)))
-
-  "A" '(lambda ()
-	 (interactive)
-	 (progn
-	   (end-of-line)
-	   (insert-state)))
-
-  "c c" '(lambda ()
-	   (interactive)
-	   (progn
-	     (crux-move-beginning-of-line 1)
-	     (kill-line)
-	     (insert-state)))
-
-  "c w" '(lambda ()
-	   (interactive)
-	   (progn
-	     (kill-word 1)
-	     (insert-state)))
-
-  "S" '(lambda ()
-	 (interactive)
-	 (progn
-	   (kill-line)
-	   (insert-state)))
-
-  "O" '(lambda ()
-	 (interactive)
-	 (crux-smart-open-line-above)
-	 (insert-state))
-
   "ç" "C-x C-x"
 
   "g" 'keyboard-quit)
 
 
 (visual-map
-;; (general-def
-  ;; :keymaps 'visual
   "w" 'kill-region
   "W" 'kill-ring-save
-  ";" 'uncomment-region
+  ";" 'comment-region
   "g" 'keyboard-quit)
 
 
@@ -135,12 +91,6 @@
 		 (interactive)
 		 (find-file (concat user-emacs-directory "init.el")))
 	       :wk "open-init")
-
-  "o C" '(:def (lambda ()
-		 (interactive)
-		 (find-file (concat user-emacs-directory "/lisp/organize.el")))
-	       :wk "org-config")
-
 
   "b" '(:def nil :wk "buffer")
   "b b" '(:def switch-to-buffer :wk "buffer-list")

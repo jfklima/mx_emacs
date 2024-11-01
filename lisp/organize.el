@@ -45,7 +45,7 @@
 
   "o o" '(:def (lambda ()
 		 (interactive)
-		 (find-file "~/orgs/tarefas.org"))
+		 (find-file todo-file))
 	       :wk "org-todo")
 
   "o s" 'org-store-link

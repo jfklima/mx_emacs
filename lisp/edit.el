@@ -17,36 +17,33 @@
 (use-package crux
   :ensure t
   :config
+  (global-set-key [remap beginning-of-line] 'crux-move-beginning-of-line)
   (global-set-key [remap join-line] 'crux-top-join-line)
   (global-set-key [remap delete-file] 'crux-delete-file-and-buffer))
 
+
 (use-package avy
+  :commands avy-goto-char avy-goto-char-in-linee
   :ensure t
   :config
-  (setq avy-background t))
+  (setq avy-background t)
 
-(use-package caps-lock
-  :ensure t
-  :bind ("C-c u" . 'caps-lock-mode))
+  (motion-map
+    "j" 'avy-goto-char
+    "," 'avy-goto-char-in-line))
+
 
 (use-package undo-fu :ensure t
   :config
   (global-set-key [remap undo] 'undo-fu-only-undo)
   (global-set-key [remap undo-redo] 'undo-fu-only-redo))
 
-(use-package aggressive-indent
-  :disabled t
-  :ensure t
-  :hook
-  (emacs-lisp-mode . aggressive-indent-mode)
-  (ruby-mode . aggressive-indent-mode))
 
-(let ((package 'zzz-to-char))
-  (unless (package-installed-p package)
-    (package-install package)))
 
-(require 'zzz-to-char)
-(global-set-key [remap zap-to-char] 'zzz-to-char)
-(global-set-key [remap zap-up-to-char] 'zzz-up-to-char)
+(use-package zzz-to-char :ensure t
+  :config
+  (global-set-key [remap zap-to-char] 'zzz-to-char)
+  (global-set-key [remap zap-up-to-char] 'zzz-up-to-char))
+
 
 (provide 'edit)

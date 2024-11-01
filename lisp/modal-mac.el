@@ -1,3 +1,5 @@
+(use-package caps-lock :ensure t)
+
 (use-package multistate
   :diminish ""
   :ensure t
