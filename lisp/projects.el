@@ -6,6 +6,17 @@
 (use-package projectile
   :ensure t
   :diminish projectile-mode
+
+  :preface
+  (defun org-project ()
+    (interactive)
+    (let ((org-project-name (concat (projectile-project-root)
+				    "org-project"
+				    "_"
+				    (projectile-project-name)
+				    ".org")))
+      (find-file org-project-name)))
+
   :config
   (setq projectile-project-search-path '("~/Projetos"))
   (global-set-key [remap projectile-find-dir] 'neotree-projectile-action)
@@ -48,6 +59,7 @@
   "p s" 'project-shell
   "p b" 'projectile-switch-to-buffer
   "p K" 'projectile-kill-buffers
+  "p o" 'org-project
 
   ;; neotree
   "d" '(:def nil :wk "directory")
