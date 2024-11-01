@@ -1,16 +1,10 @@
-;; Coisas a serem feitas
-;; Este é o significado básico da palavra agenda, vindo do latim
-;; agendum. O modo organizacional é muito bom para criar diferentes
-;; tipos de agendas ou listas de tarefas, coletando todas as tarefas
-;; de um ou mais documentos organizacionais.
 (require 'org)
 
 (setq org-directory "~/org/")
-
 (setq todo-file (concat org-directory "todo.org"))
 
 ;; (setq org-default-notes-file (concat org-directory "tarefas.org"))
-(setq org-default-notes-file todo-file)
+  (setq org-default-notes-file todo-file)
 
 (defun todo ()
   (interactive)
@@ -76,7 +70,10 @@
   "p" '(:def org-set-property :wk "set-property"))
 
 (use-package org-bullets :ensure t
-  :hook org-mode
-  :config (org-bullets-mode 1))
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (org-bullets-mode 1))
+
+
 
 (provide 'organize)
