@@ -61,6 +61,8 @@
   "p K" 'projectile-kill-buffers
   "p o" 'org-project
 
+  "o o" 'org-project
+
   ;; neotree
   "d" '(:def nil :wk "directory")
   "d d" 'neotree-toggle

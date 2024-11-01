@@ -43,7 +43,7 @@
 (space-leader
   "o" '(:def nil :wk "org")
 
-  "o o" '(:def (lambda ()
+  "o t" '(:def (lambda ()
 		 (interactive)
 		 (find-file todo-file))
 	       :wk "org-todo")
@@ -74,5 +74,9 @@
   "o" '(:def org-sort-entries :wk "sort-entries")
 
   "p" '(:def org-set-property :wk "set-property"))
+
+(use-package org-bullets :ensure t
+  :hook org-mode
+  :config (org-bullets-mode 1))
 
 (provide 'organize)
