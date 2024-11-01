@@ -52,6 +52,7 @@
   ;; projectile
   "p" '(:def nil :wk "projects")
   "p p" 'projectile-switch-project
+  "p q" 'projectile-switch-open-project
   "p f" 'projectile--find-file
   "p d" 'projectile-find-dir
   "p D" 'project-dired
@@ -59,9 +60,8 @@
   "p s" 'project-shell
   "p b" 'projectile-switch-to-buffer
   "p K" 'projectile-kill-buffers
-  "p o" 'org-project
 
-  "o o" 'org-project
+  "p o" 'org-project
 
   ;; neotree
   "d" '(:def nil :wk "directory")
