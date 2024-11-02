@@ -11,4 +11,14 @@
   "f r" 'counsel-recentf)
 
 
+(use-package helpful :ensure t
+  :config
+  (global-set-key [remap describe-function] 'helpful-callable)
+  (global-set-key [remap describe-symbol] 'helpful-symbol)
+  (global-set-key [remap describe-key] 'helpful-key)
+  (space-leader
+    "h c" 'helpful-command
+    "h ." 'helpful-at-point))
+
+
 (provide 'util)
