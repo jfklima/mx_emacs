@@ -7,6 +7,7 @@
 
   (define-key ivy-minibuffer-map (kbd "RET") 'ivy-alt-done)
   (define-key ivy-minibuffer-map (kbd "C-j") 'ivy-immediate-done)
+  (define-key ivy-mode-map (kbd "M-l") 'ivy-backward-kill-word)
 
   (ivy-mode +1))
 
