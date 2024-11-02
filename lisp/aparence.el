@@ -30,13 +30,27 @@
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 
+
 (use-package minions :ensure t
   :config (minions-mode 1))
+
 
 (use-package doom-modeline
   :ensure t
   :config
-  (setq doom-modeline-height 40)
+  (setq
+   ;; Uma modeline bem visível
+   doom-modeline-height 40
+   ;; não mostra se o buffer não está salvo, por causa do super-save
+   doom-modeline-buffer-state-icon nil
+   doom-modeline-buffer-modification-icon nil)
+
+  ;; hora na modeline
+  (setq display-time-string-forms
+        '((propertize (concat 24-hours ":" minutes)))
+	doom-modeline-time-icon nil)
+
+  (display-time-mode t)
 
   :init (doom-modeline-mode 1))
 

@@ -98,8 +98,7 @@
 
   "b" '(:def nil :wk "buffer")
   "b b" '(:def switch-to-buffer :wk "buffer-list")
-  "b s" 'save-buffer
-  "b S" 'save-some-buffers
+  "b s" 'save-some-buffers
   "b k" 'kill-this-buffer
   "b a" 'beginning-of-buffer
   "b e" 'end-of-buffer

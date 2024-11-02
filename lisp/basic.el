@@ -20,10 +20,6 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Cleanup some blank problems in all buffer or at region.
-;; before a buffer is saved to its file.
-(add-hook 'before-save-hook 'whitespace-cleanup)
-
 ;; clear message initial of scratch
 (setq initial-scratch-message "")
 
