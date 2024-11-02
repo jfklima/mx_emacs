@@ -1,6 +1,7 @@
 (use-package beacon :ensure t
   :config (beacon-mode 1))
 
+
 (use-package recentf
   :config
   (setq recentf-max-saved-items 200

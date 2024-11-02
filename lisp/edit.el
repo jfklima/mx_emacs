@@ -69,4 +69,10 @@
   "T" 'move-text-up)
 
 
+(use-package iedit :ensure t
+  :config
+  (add-hook 'iedit-mode-hook 'insert-state)
+  (add-hook 'iedit-mode-end-hook 'edit-state))
+
+
 (provide 'edit)
