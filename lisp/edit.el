@@ -21,7 +21,8 @@
   :config
   (global-set-key [remap beginning-of-line] 'crux-move-beginning-of-line)
   (global-set-key [remap join-line] 'crux-top-join-line)
-  (global-set-key [remap delete-file] 'crux-delete-file-and-buffer))
+  (global-set-key [remap delete-file] 'crux-delete-file-and-buffer)
+  (global-set-key [remap rename-file] 'crux-rename-buffer-and-file))
 
 
 (use-package avy

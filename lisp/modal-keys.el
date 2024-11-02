@@ -92,6 +92,10 @@
 		 (find-file (concat user-emacs-directory "init.el")))
 	       :wk "open-init")
 
+  "f R" 'rename-file
+  "f w" 'write-file
+  "f D" 'delete-file
+
   "b" '(:def nil :wk "buffer")
   "b b" '(:def switch-to-buffer :wk "buffer-list")
   "b s" 'save-buffer
