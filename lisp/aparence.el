@@ -1,5 +1,5 @@
 (add-to-list 'default-frame-alist
-	     '(font . "DejaVu Sans Mono-13"))
+	     '(font . "DejaVu Sans Mono-15"))
 
 (use-package all-the-icons
   :ensure t
