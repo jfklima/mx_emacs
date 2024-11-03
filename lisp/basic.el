@@ -35,5 +35,8 @@
 ;; start every frame maximized
 (add-to-list 'default-frame-alist '(fullscreen . fullboth))
 
+;; guardando a última posição dos buffers visitados
+(use-package saveplace
+  :init (save-place-mode))
 
 (provide 'basic)
