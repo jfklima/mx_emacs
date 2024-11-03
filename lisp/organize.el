@@ -4,7 +4,7 @@
 (setq todo-file (concat org-directory "todo.org"))
 
 ;; (setq org-default-notes-file (concat org-directory "tarefas.org"))
-  (setq org-default-notes-file todo-file)
+(setq org-default-notes-file todo-file)
 
 (defun todo ()
   (interactive)
@@ -73,7 +73,6 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   (org-bullets-mode 1))
-
 
 
 (provide 'organize)
