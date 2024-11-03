@@ -1,0 +1,35 @@
+* DONE Criar o comando org-project
+*** Objetivo
+    Criar um comando que auxilia na criação de arquivos de org por
+    projeto. Assim podemos ter um arquivo org por projeto, servindo para
+    organizar o desenvolvimento do projeto e sendo fácil de acessar
+    quando se estar no projeto.
+* Reformular o modulo programming para Python
+  :PROPERTIES:
+  :CATEGORY: confmacs
+  :END:
+*** Objetivo
+    Melhorar a forma como o autocomplete funciona no python, agora não
+    está funcionando corretamente.
+*** abordagem
+***** 1. Código de config do doom-emacs referente ao python
+      Ler o código de configuração do módulo Python no doom para
+      encontrar formas de configurar o eglot para Python.
+******* TODO [#B] Ler o código de configuração do múdulo Python no doom emacs.
+	<2024-11-01 sex>
+* Módulo Edit
+  :PROPERTIES:
+  :CATEGORY: confmacs
+  :END:
+*** TODO Adicionar o text-move no emacs
+    <2024-11-08 sex>
+* Módulo Interctive
+  :PROPERTIES:
+  :CATEGORY: confmacs
+  :END:
+*** TODO [#B] Adiciona "C-l" no ivy-minibuffer-map
+    <2024-11-01 sex>
+    É complicado está sempre tendo que teclar "M-Backspace" para
+    excluir um diretório e ir para um dir acima. Usando "C-l" igual ao
+    helm podemos navegar para um dir acima com mais facilidade e
+    ergonomia.

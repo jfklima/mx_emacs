@@ -11,9 +11,7 @@
   (defun org-project ()
     (interactive)
     (let ((org-project-name (concat (projectile-project-root)
-				    "org-project"
-				    "_"
-				    (projectile-project-name)
+				    "project"
 				    ".org")))
       (find-file org-project-name)))
 
