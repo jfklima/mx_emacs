@@ -35,6 +35,7 @@
 
   :config
   ;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+
   (setq neo-theme 'icons
 	neo-smart-open t
 	neo-window-width 40)

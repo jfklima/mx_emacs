@@ -39,4 +39,41 @@
     "h ." 'helpful-at-point))
 
 
+(use-package centaur-tabs :ensure t
+  :demand
+  :config
+  ;; Faz com que o rosto de manchete corresponder ao rosto de
+   ;; centauro-tabs-default. Isso faz com que a barra de tabulação
+   ;; tenha uma aparência uniforme.
+  (centaur-tabs-headline-match)
+
+  (setq
+   ;; Muda a forma da aba
+   centaur-tabs-style "wave"
+   ;; Para alterar a altura da guia
+   centaur-tabs-height 32
+   ;; Exibe uma barra colorida na guia selecionada
+   centaur-tabs-set-bar 'left
+   ;; para desativar o botão de fechar
+   centaur-tabs-set-close-button nil
+   ;; Navega apenas na guia do grupo atual
+   centaur-tabs-cycle-scope 'tabs
+   ;; Reordena as guias
+   centaur-tabs-adjust-buffer-order 'right
+   ;; mostra letras, ao invés de números
+   centaur-tabs-ace-jump-keys '(?a ?s ?d ?f ?j ?k ?l ?ç))
+
+  (centaur-tabs-group-buffer-groups)
+  (centaur-tabs-group-by-projectile-project)
+
+   (edit-map
+     "M-p" 'centaur-tabs-backward
+     "M-n" 'centaur-tabs-forward
+     "M-l" 'centaur-tabs-counsel-switch-group
+     "M-k" 'centaur-tabs-kill-other-buffers-in-current-group
+     "M-j" 'centaur-tabs-ace-jump)
+
+  (centaur-tabs-mode t))
+
+
 (provide 'util)
