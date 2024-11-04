@@ -112,6 +112,13 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
     (t
      (centaur-tabs-get-group-name (current-buffer))))))
 
+  (edit-map
+    "M-p" 'centaur-tabs-backward
+    "M-n" 'centaur-tabs-forward
+    "M-l" 'centaur-tabs-counsel-switch-group
+    "M-k" 'centaur-tabs-kill-other-buffers-in-current-group
+    "M-j" 'centaur-tabs-ace-jump)
+
   :bind (("M-p" . centaur-tabs-backward)
 	 ("M-n" . centaur-tabs-forward)
 	 ("M-l" . centaur-tabs-counsel-switch-group)
