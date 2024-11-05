@@ -70,6 +70,6 @@
   "g" '(:def nil :wk "git")
   "g s" 'magit-status
   "g d" 'magit-file-dispatch
-  "g D" 'magit-dispatch)
+  "g m" 'magit-dispatch)
 
 (provide 'projects)
