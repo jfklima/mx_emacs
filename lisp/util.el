@@ -78,7 +78,7 @@
    ;; Reordena as guias
    centaur-tabs-adjust-buffer-order 'right
    ;; mostra letras, ao invés de números
-   centaur-tabs-ace-jump-keys '(?a ?s ?d ?f ?j ?k ?l ?ç))
+   centaur-tabs-ace-jump-keys '(?a ?s ?d ?f ?j ?k ?l ?g ?h))
 
   (defun centaur-tabs-buffer-groups ()
   "`centaur-tabs-buffer-groups' control buffers' group rules.
