@@ -4,6 +4,7 @@
 (require 'packages)
 (require 'aparence)
 (require 'modal-mac)
+(require 'func)
 (require 'modal-keys)
 (require 'edit)
 (require 'projects)

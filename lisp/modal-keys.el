@@ -44,6 +44,10 @@
   "x" 'backward-delete-char
   "X" 'backward-kill-word
 
+  "s" 'subst-char
+
+  "S" 'subst-space
+
   "]" 'scroll-other-window
   "[" 'scroll-other-window-down
 
