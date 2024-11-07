@@ -116,12 +116,30 @@
   (general-create-definer mode-leader :keymaps 'space-leader :prefix "SPC m"))
 
 
-(use-package which-key
-  :ensure t
-  :diminish which-key-mode
+(use-package which-key :ensure t
   :config
-  (setq which-key-idle-delay 0.5)
-  (setq which-key-idle-secondary-delay 0.1)
+  (setq
+   ;; Delay (in seconds) for which-key buffer to popup
+   which-key-idle-delay 0.5
+   ;; Seconds to wait for which-key to pop up after initial display
+   which-key-idle-secondary-delay 0.1
+   ;; Additional spaces to add to the left of each key column.
+   which-key-add-column-padding 2
+   ;; Truncate the description of keys to this length
+   which-key-max-description-length 50
+   ;; Minimum number of horizontal lines to display in the which-key buffer.
+   which-key-min-display-lines 1
+   ;; Maximum number of columns to display in the which-key buffer.
+   which-key-max-display-columns 4)
+
   (which-key-mode +1))
+
+(use-package which-key-posframe :ensure t
+  :config
+  (which-key-posframe-mode)
+  (setq
+   which-key-posframe-border-width 2
+   which-key-posframe-poshandler 'posframe-poshandler-window-bottom-center))
+
 
 (provide 'modal-mac)
