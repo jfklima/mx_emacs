@@ -1,12 +1,3 @@
-(use-package eglot :ensure t)
-
-(with-eval-after-load 'eglot
-    (add-to-list 'eglot-server-programs
-		 '(python-mode . ("ruff-lsp"))
-		 '(python-mode . ("pyright-server"))))
-
-(add-hook 'python-mode-hook #'eglot-ensure)
-
 (use-package counsel-dash :ensure t
   :config
   (setq dash-docs-enable-debugging nil)
@@ -14,7 +5,6 @@
 
   (mode-leader :keymaps 'prog-mode-map
     "d" 'counsel-dash
-    "i" 'imenu
     "." 'counsel-dash-at-point))
 
 
