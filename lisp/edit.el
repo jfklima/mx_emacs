@@ -3,6 +3,8 @@
   :diminish company-mode
   :config
   (setq completion-ignore-case t)
+  (setq company-minimum-prefix-length 1)
+  (setq company-idle-delay 0.1)
   (add-hook 'prog-mode-hook #'company-mode))
 
 
