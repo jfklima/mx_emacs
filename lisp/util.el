@@ -126,4 +126,12 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	 ("M-j" . centaur-tabs-ace-jump)))
 
 
+(use-package emojify :ensure t
+  :hook (after-init . global-emojify-mode))
+
+(space-leader
+  "i" '(:def nil :wk "insert")
+  "i m" 'emojify-insert-emoji)
+
+
 (provide 'util)

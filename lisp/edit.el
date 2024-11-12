@@ -49,6 +49,7 @@
   (global-set-key [remap zap-to-char] 'zzz-to-char)
   (global-set-key [remap zap-up-to-char] 'zzz-up-to-char))
 
+(use-package exec-path-from-shell :ensure t)
 
 (use-package move-text :ensure t
   :preface
