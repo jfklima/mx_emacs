@@ -2,6 +2,12 @@
 (setq gc-cons-threshold 100000000)
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 
+(use-package tree-sitter :ensure t
+  :config
+  (require 'tree-sitter-langs)
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
 (use-package lsp-mode :ensure
   ;; :hook (python-mode . lsp-deferred)
   :commands (lsp lsp-deferred)
