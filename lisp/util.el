@@ -25,9 +25,6 @@
 	recentf-max-menu-items 15)
   (recentf-mode +1))
 
-(space-leader
-  "f r" 'counsel-recentf)
-
 
 (use-package helpful :ensure t
   :config
@@ -39,11 +36,11 @@
     "h ." 'helpful-at-point))
 
 ;; Unset the default behavior of the C-x <left> and <right> arrow key navigation
-(global-unset-key (kbd "M-p"))
-(global-unset-key (kbd "M-n"))
-(global-unset-key (kbd "M-l"))
-(global-unset-key (kbd "M-k"))
-(global-unset-key (kbd "M-j"))
+;; (global-unset-key (kbd "M-p"))
+;; (global-unset-key (kbd "M-n"))
+;; (global-unset-key (kbd "M-l"))
+;; (global-unset-key (kbd "M-k"))
+;; (global-unset-key (kbd "M-j"))
 
 (use-package centaur-tabs :ensure t
   :hook (emacs-startup . centaur-tabs-mode)
@@ -90,7 +87,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (list
    (cond
     ((when-let ((project-name (centaur-tabs-project-name)))
-       (format "Project: %s" (projectile-project-name))))
+       (projectile-project-name)))
 
     ((memq major-mode '( magit-process-mode
                          magit-status-mode
@@ -115,13 +112,13 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (edit-map
     "M-p" 'centaur-tabs-backward
     "M-n" 'centaur-tabs-forward
-    "M-l" 'centaur-tabs-counsel-switch-group
+    "M-l" 'centaur-tabs-switch-group
     "M-k" 'centaur-tabs-kill-other-buffers-in-current-group
     "M-j" 'centaur-tabs-ace-jump)
 
   :bind (("M-p" . centaur-tabs-backward)
 	 ("M-n" . centaur-tabs-forward)
-	 ("M-l" . centaur-tabs-counsel-switch-group)
+	 ("M-l" . centaur-tabs-switch-group)
 	 ("M-k" . centaur-tabs-kill-other-buffers-in-current-group)
 	 ("M-j" . centaur-tabs-ace-jump)))
 

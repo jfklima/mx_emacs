@@ -11,7 +11,6 @@
 
 (use-package smartparens
   :ensure t
-  :diminish smartparens-mode
   :config
   (progn
     (require 'smartparens-config)
@@ -36,6 +35,7 @@
 
   (motion-map
     "j" 'avy-goto-char
+    "J" 'avy-goto-char-timer
     "," 'avy-goto-char-in-line))
 
 
