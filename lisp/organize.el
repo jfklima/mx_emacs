@@ -70,6 +70,9 @@
 
   "o" '(:def org-sort-entries :wk "sort-entries")
 
+  "[" 'org-agenda-file-to-front
+  "]" 'org-remove-file
+
   "p" '(:def org-set-property :wk "set-property"))
 
 
