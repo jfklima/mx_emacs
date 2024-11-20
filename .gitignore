@@ -27,3 +27,10 @@ ido.last
 org-project_*.org
 places
 emojis/
+workspace
+eclipse*
+.dap-breakpoints
+diary
+ede-projects.el
+lisp/rascunho.el
+projects

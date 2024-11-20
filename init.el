@@ -11,6 +11,7 @@
 (require 'interface)
 (require 'organize)
 (require 'programming)
+(require 'language)
 (require 'util)
 
 (setq custom-file (concat user-emacs-directory "custom.el"))
