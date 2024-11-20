@@ -13,6 +13,7 @@
   (package-install 'use-package))
 
 (setq use-package-compute-statistics t)
+(setq use-package-always-ensure t)
 
 (use-package diminish
   :ensure t)
