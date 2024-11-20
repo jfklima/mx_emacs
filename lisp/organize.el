@@ -27,8 +27,11 @@
 
 ;; mostra a agenda do dia atual
 (setq org-agenda-span 'day)
+;; mostra semana a partir do dia atual - ver a frente
 (setq org-agenda-start-day "-0d")
 (setq org-agenda-start-on-weekday nil)
+(setq org-agenda-skip-deadline-if-done t)
+(setq org-agenda-skip-scheduled-if-done t)
 
 ;; não mostra na agenda tarefas concluídas
 (setq org-agenda-skip-timestamp-if-done t)
