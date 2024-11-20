@@ -39,4 +39,7 @@
 (use-package saveplace
   :init (save-place-mode))
 
+;; revert o buffer automaticamente quando o arquivo muda no disco.
+(global-auto-revert-mode t)
+
 (provide 'basic)
